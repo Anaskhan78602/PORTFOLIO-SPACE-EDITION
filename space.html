@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anas Khan - Full Stack Developer | Space Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    (function(){
+        emailjs.init("mdCOixzSeSCWBr3Q1"); // Replace with your EmailJS public key
+    })();
+</script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="space-bg">
+    <!-- ...existing HTML content... -->
+    <!-- Place all your HTML content here, remove <style> and <script> tags -->
+    <!-- ...existing HTML content... --> <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Animated Stars Background -->
+    <div class="stars" id="starsContainer"></div>
+    
+    <!-- Floating Planets -->
+    <div class="planet planet-1"></div>
+    <div class="planet planet-2"></div>
+    <div class="planet planet-3"></div>
+    
+    <!-- Space Navigation -->
+    <nav class="fixed top-0 w-full z-50 space-nav">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold space-font neon-cyan">ANAS KHAN</div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:neon-blue transition-all duration-300">HOME</a>
+                    <a href="#about" class="text-white hover:neon-purple transition-all duration-300">ABOUT</a>
+                    <a href="#achievements" class="text-white hover:neon-pink transition-all duration-300">ACHIEVEMENTS</a>
+                    <a href="#education" class="text-white hover:neon-cyan transition-all duration-300">EDUCATION</a>
+                    <a href="#skills" class="text-white hover:neon-cyan transition-all duration-300">SKILLS</a>
+                    <a href="#experience" class="text-white hover:neon-pink transition-all duration-300">EXPERIENCE</a>
+                    <a href="#projects" class="text-white hover:neon-pink transition-all duration-300">PROJECTS</a>
+                    <a href="#certifications" class="text-white hover:neon-green transition-all duration-300">CERTIFICATIONS</a>
+                    <a href="#contact" class="text-white hover:neon-blue transition-all duration-300">CONTACT</a>
+                </div>
+                
+                <button id="mobileMenu" class="md:hidden p-2 rounded-full hover:bg-white hover:bg-opacity-10 transition-colors">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenuPanel" class="fixed inset-0 bg-black bg-opacity-90 z-40 hidden">
+        <div class="fixed right-0 top-0 h-full w-80 space-card transform translate-x-full transition-transform duration-300" id="mobileMenuContent">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-xl font-semibold space-font neon-cyan">NAVIGATION</h3>
+                    <button id="closeMobileMenu" class="p-2 hover:bg-white hover:bg-opacity-10 rounded-full">
+                        <i class="fas fa-times text-white"></i>
+                    </button>
+                </div>
+                <nav class="space-y-4">
+                    <a href="#home" class="block py-3 text-white hover:neon-blue border-b border-gray-700">HOME</a>
+                    <a href="#about" class="block py-3 text-white hover:neon-purple border-b border-gray-700">ABOUT</a>
+                    <a href="#achievements" class="block py-3 text-white hover:neon-pink border-b border-gray-700">ACHIEVEMENTS</a>
+                    <a href="#education" class="block py-3 text-white hover:neon-cyan border-b border-gray-700">EDUCATION</a>
+                    <a href="#skills" class="block py-3 text-white hover:neon-cyan border-b border-gray-700">SKILLS</a>
+                    <a href="#experience" class="block py-3 text-white hover:neon-pink border-b border-gray-700">EXPERIENCE</a>
+                    <a href="#projects" class="block py-3 text-white hover:neon-pink border-b border-gray-700">PROJECTS</a>
+                    <a href="#certifications" class="block py-3 text-white hover:neon-green border-b border-gray-700">CERTIFICATIONS</a>
+                    <a href="#contact" class="block py-3 text-white hover:neon-blue">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center deep-space-bg relative overflow-hidden">
+        <div class="text-center text-white px-4 max-w-4xl mx-auto relative z-10">
+             <h1 class="text-5xl md:text-7xl font-bold mb-6 space-font reveal-cosmic">
+                WELCOME TO <span class="neon-cyan ">SPACE</span>
+            </h1>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 space-font reveal-fade-up stagger-2">
+                I'M <span class="neon-purple">ANAS KHAN</span>
+            </h2>
+            <div class="text-xl md:text-2xl mb-8 h-8 reveal-scale stagger-3">
+                <span id="typingText" class="cosmic-typing space-font"></span>
+            </div>
+            <p class="text-lg md:text-xl mb-12 text-gray-300 max-w-2xl mx-auto reveal-fade-up stagger-4">
+                🚀 Full-Stack Software Engineer navigating the digital cosmos with MERN stack technologies
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-scale stagger-5">
+                <a href="#projects" class="cosmic-btn px-8 py-4 rounded-full font-semibold space-font transition-all transform hover:scale-110 magnetic">
+                    <i class="fas fa-rocket mr-2"></i>EXPLORE PROJECTS
+                </a>
+                <a href="#contact" class="cosmic-btn px-8 py-4 rounded-full font-semibold space-font transition-all transform hover:scale-110 magnetic">
+                    <i class="fas fa-satellite mr-2"></i>MAKE CONTACT
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating Cosmic Elements with Parallax -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-purple-500 bg-opacity-20 rounded-full float-cosmic parallax-slow"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-cyan-400 bg-opacity-20 rounded-full float-cosmic parallax-medium" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-40 left-20 w-12 h-12 bg-pink-400 bg-opacity-20 rounded-full float-cosmic parallax-fast" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-20 right-10 w-24 h-24 bg-blue-400 bg-opacity-20 rounded-full float-cosmic parallax-slow" style="animation-delay: 0.5s;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 deep-space-bg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 space-font neon-purple">ABOUT THE EXPLORER</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal-scale stagger-1">
+                    <div class="w-80 h-80 mx-auto space-card flex items-center justify-center pulse-cosmic holographic">
+                        <i class="fas fa-user-astronaut text-8xl neon-cyan float-cosmic"></i>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-white space-font neon-blue reveal-fade-left stagger-2">COSMIC DEVELOPER</h3>
+                    <p class="text-lg text-gray-300 leading-relaxed reveal-fade-up stagger-3">
+                        🌌 Navigating the vast universe of code, I'm a passionate Full-Stack Software Engineer specializing in the MERN constellation. With expertise in React.js, Node.js, and REST APIs, I craft digital experiences that transcend earthly boundaries. I architect scalable web applications with pixel-perfect precision and engineer robust backend systems that power seamless user experiences across the digital cosmos.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-card p-6 text-center hover:cosmic-glow transition-all duration-500 reveal-scale stagger-4">
+                            <div class="text-3xl font-bold neon-cyan space-font pulse-cosmic counter" data-target="200">200+</div>
+                            <div class="text-gray-300">Problems Solved</div>
+                        </div>
+                        <div class="space-card p-6 text-center hover:cosmic-glow transition-all duration-500 reveal-scale stagger-5">
+                            <div class="text-3xl font-bold neon-purple space-font pulse-cosmic counter" data-target="3">5+</div>
+                            <div class="text-gray-300">Cosmic Projects</div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3 reveal-fade-right stagger-6">
+                            <i class="fas fa-globe-americas neon-cyan"></i>
+                            <span class="text-white">📍 Kanpur, India - Earth</span>
+                        </div>
+                        <div class="flex items-center space-x-3 reveal-fade-right stagger-1">
+                            <i class="fas fa-graduation-cap neon-purple"></i>
+                            <span class="text-white">🎓 B.Tech Computer Science (2022-2026)</span>
+                        </div>
+                        <div class="flex items-center space-x-3 reveal-fade-right stagger-2">
+                            <i class="fas fa-code neon-pink"></i>
+                            <span class="text-white">💻 Passionate Problem Solver & Innovation Architect</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 deep-space-bg relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 space-font neon-pink">COSMIC ACHIEVEMENTS</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    🏆 Milestones conquered across the digital universe - each achievement a star in my coding constellation
+                </p>
+            </div>
+            
+            <!-- Achievement Timeline -->
+            <div class="relative">
+                <!-- Central Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 via-cyan-500 to-pink-500 rounded-full timeline-line"></div>
+                
+                <!-- Achievement Items -->
+                <div class="space-y-16">
+                    <!-- Achievement 1 -->
+                    <div class="flex items-center achievement-item reveal-fade-left stagger-1">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="achievement-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500">
+                                <div class="flex items-center justify-end mb-4">
+                                    <div class="achievement-icon w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-trophy text-white"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white space-font neon-blue">HACKERRANK MASTERY</h3>
+                                </div>
+                                <p class="text-gray-300 mb-2">🌟 4⭐ C/C++ Programming Excellence</p>
+                                <p class="text-gray-300 mb-4">🐍 3⭐ Python Problem Solving Champion</p>
+                                <div class="text-sm text-cyan-400 space-font">2023 - 2024</div>
+                            </div>
+                        </div>
+                        <div class="achievement-node w-6 h-6 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full border-4 border-black z-10 pulse-cosmic"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                    
+                    <!-- Achievement 2 -->
+                    <div class="flex items-center achievement-item reveal-fade-right stagger-2">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="achievement-node w-6 h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full border-4 border-black z-10 pulse-cosmic"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="achievement-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500">
+                                <div class="flex items-center mb-4">
+                                    <div class="achievement-icon w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-code text-white"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white space-font neon-purple">FULL-STACK MASTERY</h3>
+                                </div>
+                                <p class="text-gray-300 mb-2">🚀 MERN Stack Specialist Certification</p>
+                                <p class="text-gray-300 mb-4">⚡ Advanced React.js & Node.js Expertise</p>
+                                <div class="text-sm text-purple-400 space-font">2023 - Present</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Achievement 3 -->
+                    <div class="flex items-center achievement-item reveal-fade-left stagger-3">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="achievement-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500">
+                                <div class="flex items-center justify-end mb-4">
+                                    <div class="achievement-icon w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-project-diagram text-white"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white space-font neon-cyan">PROJECT ARCHITECT</h3>
+                                </div>
+                                <p class="text-gray-300 mb-2">🏗️ 10+ Successful Web Applications Deployed</p>
+                                <p class="text-gray-300 mb-4">🌐 Full-Stack Solutions from Concept to Launch</p>
+                                <div class="text-sm text-cyan-400 space-font">2022 - Present</div>
+                            </div>
+                        </div>
+                        <div class="achievement-node w-6 h-6 bg-gradient-to-r from-green-500 to-teal-500 rounded-full border-4 border-black z-10 pulse-cosmic"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                    
+                    <!-- Achievement 4 -->
+                    <div class="flex items-center achievement-item reveal-fade-right stagger-4">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="achievement-node w-6 h-6 bg-gradient-to-r from-pink-500 to-red-500 rounded-full border-4 border-black z-10 pulse-cosmic"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="achievement-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500">
+                                <div class="flex items-center mb-4">
+                                    <div class="achievement-icon w-12 h-12 bg-gradient-to-r from-pink-500 to-red-600 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-rocket text-white"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white space-font neon-pink">INNOVATION PIONEER</h3>
+                                </div>
+                                <p class="text-gray-300 mb-2">🎯 Advanced UI/UX Design Implementation</p>
+                                <p class="text-gray-300 mb-4">✨ Cutting-edge Animation & Interaction Expert</p>
+                                <div class="text-sm text-pink-400 space-font">2023 - Present</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Achievement Badges -->
+        <div class="absolute top-20 left-10 achievement-badge float-cosmic">🏆</div>
+        <div class="absolute top-40 right-20 achievement-badge float-cosmic" style="animation-delay: 1s;">⭐</div>
+        <div class="absolute bottom-40 left-20 achievement-badge float-cosmic" style="animation-delay: 2s;">🚀</div>
+        <div class="absolute bottom-20 right-10 achievement-badge float-cosmic" style="animation-delay: 0.5s;">💎</div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 deep-space-bg relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 space-font neon-cyan">ACADEMIC ODYSSEY</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    🎓 Educational journey through the cosmos of computer science and technology
+                </p>
+            </div>
+            
+            <!-- Education Cards with 3D Effect -->
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Current Education -->
+                <div class="education-card reveal-scale stagger-1">
+                    <div class="education-container relative">
+                        <div class="education-front space-card p-8 rounded-2xl">
+                            <div class="flex items-center mb-6">
+                                <div class="education-icon w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-6 pulse-cosmic">
+                                    <i class="fas fa-graduation-cap text-2xl text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white space-font neon-blue">BACHELOR OF TECHNOLOGY</h3>
+                                    <p class="text-cyan-400 space-font">Computer Science & Engineering</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-university neon-purple mr-3"></i>
+                                    <span class="text-white">Maharana Pratap Engineering College</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar neon-cyan mr-3"></i>
+                                    <span class="text-white">2022 - 2026 (Current)</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt neon-pink mr-3"></i>
+                                    <span class="text-white">Kanpur, India</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 p-4 bg-black bg-opacity-30 rounded-lg border border-blue-500 border-opacity-30">
+                                <h4 class="text-lg font-semibold text-white mb-3 space-font">Core Subjects Mastered:</h4>
+                                <div class="grid grid-cols-2 gap-2 text-sm">
+                                    <div class="text-gray-300">• Data Structures & Algorithms</div>
+                                    <div class="text-gray-300">• Database Management Systems</div>
+                                    <div class="text-gray-300">• Web Development</div>
+                                    <div class="text-gray-300">• Software Engineering</div>
+                                    <div class="text-gray-300">• Computer Networks</div>
+                                    <div class="text-gray-300">• Operating Systems</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Academic Focus -->
+                <div class="education-card reveal-scale stagger-2">
+                    <div class="education-container relative">
+                        <div class="education-front space-card p-8 rounded-2xl">
+                            <div class="flex items-center mb-6">
+                                <div class="education-icon w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mr-6 pulse-cosmic">
+                                    <i class="fas fa-brain text-2xl text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white space-font neon-green">ACADEMIC FOCUS</h3>
+                                    <p class="text-green-400 space-font">Core Learning Areas</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <div class="certification-item p-4 bg-black bg-opacity-20 rounded-lg border border-green-500 border-opacity-30 hover:border-opacity-60 transition-all">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-white font-semibold">Advanced Programming</h4>
+                                        <span class="text-green-400 text-sm space-font">Current</span>
+                                    </div>
+                                    <p class="text-gray-300 text-sm">Data Structures & Algorithms Mastery</p>
+                                </div>
+                                
+                                <div class="certification-item p-4 bg-black bg-opacity-20 rounded-lg border border-blue-500 border-opacity-30 hover:border-opacity-60 transition-all">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-white font-semibold">Software Engineering</h4>
+                                        <span class="text-blue-400 text-sm space-font">Current</span>
+                                    </div>
+                                    <p class="text-gray-300 text-sm">System Design & Architecture</p>
+                                </div>
+                                
+                                <div class="certification-item p-4 bg-black bg-opacity-20 rounded-lg border border-purple-500 border-opacity-30 hover:border-opacity-60 transition-all">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h4 class="text-white font-semibold">Database Systems</h4>
+                                        <span class="text-purple-400 text-sm space-font">Current</span>
+                                    </div>
+                                    <p class="text-gray-300 text-sm">Advanced Database Management</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 text-center">
+                                <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-teal-500 bg-opacity-20 rounded-full border border-green-500 border-opacity-30">
+                                    <i class="fas fa-graduation-cap neon-green mr-2"></i>
+                                    <span class="text-white space-font">Academic Excellence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Learning Progress Visualization -->
+            <!-- Learning Progress Visualization -->
+<div class="mt-16 text-center">
+    <h3 class="text-2xl font-bold text-white mb-8 space-font neon-cyan">KNOWLEDGE CONSTELLATION</h3>
+    <div class="relative w-full max-w-4xl mx-auto h-64">
+        
+        <!-- Frontend -->
+        <div class="knowledge-orbit orbit-1">
+            <div class="knowledge-planet planet-frontend">
+                <a href="#" class="knowledge-planet-skill-sphere">
+                    <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="Frontend" class="w-10 h-10"/>
+                </a>
+            </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="knowledge-orbit orbit-2">
+            <div class="knowledge-planet planet-backend">
+                <a href="#" class="knowledge-planet-skill-sphere">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" alt="Backend" class="w-10 h-10"/>
+                </a>
+            </div>
+        </div>
+
+        <!-- Database -->
+        <div class="knowledge-orbit orbit-3">
+            <div class="knowledge-planet planet-database">
+                <a href="#" class="knowledge-planet-skill-sphere">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="Database" class="w-10 h-10"/>
+                </a>
+            </div>
+        </div>
+
+        <!-- DevTools -->
+        <div class="knowledge-orbit orbit-4">
+            <div class="knowledge-planet planet-tools">
+                <a href="#" class="knowledge-planet-skill-sphere">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="DevTools" class="w-10 h-10"/>
+                </a>
+            </div>
+        </div>
+
+        <!-- Center -->
+        <div class="knowledge-center">
+            <div class="text-2xm space-font neon-cyan">ANAS</div>
+            <div class="text-sm text-gray-400">Learning Core</div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 deep-space-bg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 space-font neon-cyan">TECH ARSENAL</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Frontend -->
+                <div class="skill-card p-8 text-center rounded-2xl reveal-fade-up stagger-1">
+                    <div class="w-16 h-16 space-card rounded-full flex items-center justify-center mx-auto mb-6 float-cosmic">
+                        <i class="fab fa-react text-2xl neon-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4 space-font">FRONTEND</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="bg-blue-900 bg-opacity-30 px-3 py-2 rounded-full border border-blue-500 border-opacity-30">React.js</div>
+                        <div class="bg-orange-900 bg-opacity-30 px-3 py-2 rounded-full border border-orange-500 border-opacity-30">HTML/CSS</div>
+                        <div class="bg-cyan-900 bg-opacity-30 px-3 py-2 rounded-full border border-cyan-500 border-opacity-30">Tailwind CSS</div>
+                        <div class="bg-yellow-900 bg-opacity-30 px-3 py-2 rounded-full border border-yellow-500 border-opacity-30">JavaScript</div>
+                    </div>
+                </div>
+                
+                <!-- Backend -->
+                <div class="skill-card p-8 text-center rounded-2xl reveal-fade-up stagger-2">
+                    <div class="w-16 h-16 space-card rounded-full flex items-center justify-center mx-auto mb-6 float-cosmic" style="animation-delay: 0.5s;">
+                        <i class="fab fa-node-js text-2xl neon-purple"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4 space-font">BACKEND</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="bg-green-900 bg-opacity-30 px-3 py-2 rounded-full border border-green-500 border-opacity-30">Node.js</div>
+                        <div class="bg-gray-900 bg-opacity-30 px-3 py-2 rounded-full border border-gray-500 border-opacity-30">Express.js</div>
+                        <div class="bg-purple-900 bg-opacity-30 px-3 py-2 rounded-full border border-purple-500 border-opacity-30">REST APIs</div>
+                        <div class="bg-blue-900 bg-opacity-30 px-3 py-2 rounded-full border border-blue-500 border-opacity-30">Python</div>
+                    </div>
+                </div>
+                
+                <!-- Database -->
+                <div class="skill-card p-8 text-center rounded-2xl reveal-fade-up stagger-3">
+                    <div class="w-16 h-16 space-card rounded-full flex items-center justify-center mx-auto mb-6 float-cosmic" style="animation-delay: 1s;">
+                        <i class="fas fa-database text-2xl neon-pink"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4 space-font">DATABASE</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="bg-green-900 bg-opacity-30 px-3 py-2 rounded-full border border-green-500 border-opacity-30">MongoDB</div>
+                        <div class="bg-blue-900 bg-opacity-30 px-3 py-2 rounded-full border border-blue-500 border-opacity-30">MySQL</div>
+                        <div class="bg-purple-900 bg-opacity-30 px-3 py-2 rounded-full border border-purple-500 border-opacity-30">Database Design</div>
+                        <div class="bg-orange-900 bg-opacity-30 px-3 py-2 rounded-full border border-orange-500 border-opacity-30">Data Modeling</div>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="skill-card p-8 text-center rounded-2xl reveal-fade-up stagger-4">
+                    <div class="w-16 h-16 space-card rounded-full flex items-center justify-center mx-auto mb-6 float-cosmic" style="animation-delay: 1.5s;">
+                        <i class="fas fa-tools text-2xl neon-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4 space-font">TOOLS</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="bg-orange-900 bg-opacity-30 px-3 py-2 rounded-full border border-orange-500 border-opacity-30">Git</div>
+                        <div class="bg-blue-900 bg-opacity-30 px-3 py-2 rounded-full border border-blue-500 border-opacity-30">VS Code</div>
+                        <div class="bg-teal-900 bg-opacity-30 px-3 py-2 rounded-full border border-teal-500 border-opacity-30">Netlify</div>
+                        <div class="bg-gray-900 bg-opacity-30 px-3 py-2 rounded-full border border-gray-500 border-opacity-30">Vercel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 3D Skills Experience Section -->
+<section id="experience" class="py-20 deep-space-bg relative overflow-hidden">
+  <!-- Translucent container for all content -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8  backdrop-blur-md rounded-2xl shadow-lg p-8">
+    
+    <!-- Heading + Subtitle -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 space-font neon-cyan">
+        HANDS-ON EXPERIENCE
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full mb-8"></div>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        🌌 Interactive 3D skill spheres floating in the cosmic void - hover and click to explore my technical universe!
+      </p>
+    </div>
+
+    <!-- 3D Skills Container -->
+    <div 
+      id="skills3DContainer" 
+      class="relative w-full h-[600px] md:h-[700px] bg-translucent "
+    >
+      <!-- Skill Spheres will be dynamically added here -->
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 deep-space-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 space-font neon-pink">COSMIC PROJECTS</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-cyan-500 mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="project-card rounded-2xl overflow-hidden shadow-lg reveal-scale stagger-1">
+                <div class="h-48 bg-gradient-to-br from-orange-600 to-red-700 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-utensils text-6xl text-white float-cosmic"></i>
+                    <div class="absolute inset-0 holographic"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3 space-font neon-blue">YUMIFY</h3>
+                    <p class="text-gray-300 mb-4">🍕 YUMIFY is an interstellar food delivery platform built with React.js, Tailwind CSS, and Framer Motion. Featuring smooth, cosmic-inspired animations, a fully responsive design, and an intuitive user interface, YUMIFY delivers a seamless online ordering experience. Integrated with Redux for state management, it ensures fast, real-time updates, making food delivery effortless and engaging across all devices.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 text-cyan-300 rounded-full text-sm border border-cyan-500 border-opacity-30">React.js</span>
+                        <span class="px-3 py-1 bg-orange-900 bg-opacity-50 text-orange-300 rounded-full text-sm border border-orange-500 border-opacity-30">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-purple-900 bg-opacity-50 text-purple-300 rounded-full text-sm border border-orange-500 border-opacity-30">Framer Motion</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 text-cyan-300 rounded-full text-sm border border-cyan-500 border-opacity-30">Redux</span>
+                        <span class="px-3 py-1 bg-green-900 bg-opacity-50 text-green-300 rounded-full text-sm border border-cyan-500 border-opacity-30">Netlify</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://yumify-food-delivery.netlify.app/" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fas fa-external-link-alt mr-2"></i>Launch</a>
+                        <a href="https://github.com/Anaskhan78602/YUMIFY" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fab fa-github mr-2"></i>Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card rounded-2xl overflow-hidden shadow-lg reveal-scale stagger-2">
+                <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-700 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-user-astronaut text-6xl text-white float-cosmic"></i>
+                    <div class="absolute inset-0 holographic"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3 space-font neon-purple">SPACE PORTFOLIO</h3>
+                    <p class="text-gray-300 mb-4">🚀 SPACE PORTFOLIO is a futuristic, space-themed portfolio website crafted with HTML, Tailwind CSS, JavaScript and GSAP animations. It features interactive elements, smooth scrolling, and visually striking cosmic effects that bring your projects and skills to life. Perfectly responsive and performance-optimized, it demonstrates technical expertise while offering an immersive digital experience.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-orange-900 bg-opacity-50 text-orange-300 rounded-full text-sm border border-cyan-500 border-opacity-30">HTML</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 text-blue-300 rounded-full text-sm border border-teal-500 border-opacity-30">Tailwind</span>
+                        <span class="px-3 py-1 bg-yellow-900 bg-opacity-50 text-yellow-300 rounded-full text-sm border border-pink-500 border-opacity-30">Javascript</span>
+                        <span class="px-3 py-1 bg-pink-900 bg-opacity-50 text-pink-300 rounded-full text-sm border border-pink-500 border-opacity-30">Spline</span>
+                        <span class="px-3 py-1 bg-purple-900 bg-opacity-50 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">GSAP</span>
+                        <span class="px-3 py-1 bg-green-900 bg-opacity-50 text-green-300 rounded-full text-sm border border-cyan-500 border-opacity-30">Lenis</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fas fa-external-link-alt mr-2"></i>Launch</a>
+                        <a href="#" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fab fa-github mr-2"></i>Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card rounded-2xl overflow-hidden shadow-lg reveal-scale stagger-3">
+                <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-800 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-blog text-6xl text-white float-cosmic"></i>
+                    <div class="absolute inset-0 holographic"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3 space-font neon-cyan">DIGILEKH</h3>
+                    <p class="text-gray-300 mb-4">📝 DIGILEKH is a full-stack blogging platform built using the MERN stack (MongoDB, Express.js, React, Node.js) with JWT authentication and secure content management. It enables users to create, manage, and share digital stories effortlessly. With a modern interface and performance-optimized backend, DIGILEKH combines storytelling with technology, providing writers a cosmic space to showcase their ideas.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-green-900 bg-opacity-50 text-green-300 rounded-full text-sm border border-green-500 border-opacity-30">React</span>
+                        <span class="px-3 py-1 bg-purple-900 bg-opacity-50 text-purple-300 rounded-full text-sm border border-purple-500 border-opacity-30">Node.js</span>
+                        <span class="px-3 py-1 bg-orange-900 bg-opacity-50 text-orange-300 rounded-full text-sm border border-orange-500 border-opacity-30">Express.js</span>
+                        <span class="px-3 py-1 bg-pink-900 bg-opacity-50 text-pink-300 rounded-full text-sm border border-green-500 border-opacity-30">MongoDB</span>
+                        <span class="px-3 py-1 bg-teal-900 bg-opacity-50 text-teal-300 rounded-full text-sm border border-teal-500 border-opacity-30">Tailwind</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 text-cyan-300 rounded-full text-sm border border-cyan-500 border-opacity-30">JWT</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://digilekh.vercel.app/" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fas fa-external-link-alt mr-2"></i>Launch</a>
+                        <a href="https://github.com/Anaskhan78602/DigiLekh" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fab fa-github mr-2"></i>Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden Projects (Initially Hidden) -->
+            <div class="more-projects hidden project-card rounded-2xl overflow-hidden shadow-lg reveal-scale stagger-4">
+                <div class="h-48 bg-gradient-to-br from-red-600 to-pink-700 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-rocket text-6xl text-white float-cosmic"></i>
+                    <div class="absolute inset-0 holographic"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3 space-font neon-red">PROJECT 4</h3>
+                    <p class="text-gray-300 mb-4">Coming Soon.....</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fas fa-external-link-alt mr-2"></i>Launch</a>
+                        <a href="#" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fab fa-github mr-2"></i>Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="more-projects hidden project-card rounded-2xl overflow-hidden shadow-lg reveal-scale stagger-5">
+                <div class="h-48 bg-gradient-to-br from-purple-600 to-indigo-800 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-code text-6xl text-white float-cosmic"></i>
+                    <div class="absolute inset-0 holographic"></div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-3 space-font neon-purple">PROJECT 5</h3>
+                    <p class="text-gray-300 mb-4">Coming Soon.....</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fas fa-external-link-alt mr-2"></i>Launch</a>
+                        <a href="#" class="cosmic-btn px-4 py-2 rounded-lg transition-all transform hover:scale-110 magnetic"><i class="fab fa-github mr-2"></i>Source</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Show More / Show Less Buttons -->
+        <div class="text-center mt-12">
+            <button id="showMoreBtn" class="cosmic-btn px-6 py-3 rounded-lg transition-all hover:scale-110">Show More</button>
+            <button id="showLessBtn" class="cosmic-btn px-6 py-3 rounded-lg transition-all hover:scale-110 hidden">Show Less</button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 deep-space-bg relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 space-font neon-cyan">COSMIC CERTIFICATIONS</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-green-500 mx-auto rounded-full mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    🏅 Digital credentials earned across the technology universe - each certificate a beacon of expertise
+                </p>
+            </div>
+            
+            <!-- Certification Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- React Developer Certificate -->
+                <div class="certification-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500 reveal-scale stagger-1 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mr-4 pulse-cosmic">
+                            <i class="fab fa-react text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white space-font neon-blue">REACT DEVELOPER</h3>
+                            <p class="text-cyan-400 text-sm space-font">Great Learning</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Advanced React.js development concepts and modern frontend architecture mastery.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-cyan-400 space-font text-sm">2024</span>
+                        <a href="https://www.mygreatlearning.com/certificate/PMCESYOC" class="cosmic-btn px-4 py-2 rounded-lg text-sm transition-all transform hover:scale-110 magnetic group-hover:neon-blue">
+                            <i class="fas fa-certificate mr-2"></i>View
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Responsive Web Design -->
+                <div class="certification-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500 reveal-scale stagger-2 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mr-4 pulse-cosmic">
+                            <i class="fas fa-mobile-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white space-font neon-green">RESPONSIVE WEB DESIGN</h3>
+                            <p class="text-green-400 text-sm space-font">FreeCodeCamp</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Comprehensive responsive design principles and mobile-first development strategies.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-green-400 space-font text-sm">2024</span>
+                        <a href="https://freecodecamp.org/certification/anaskhan9795/responsive-web-design
+
+" class="cosmic-btn px-4 py-2 rounded-lg text-sm transition-all transform hover:scale-110 magnetic group-hover:neon-green">
+                            <i class="fas fa-certificate mr-2"></i>View
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Basics -->
+                <div class="certification-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500 reveal-scale stagger-3 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center mr-4 pulse-cosmic">
+                            <i class="fab fa-js-square text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white space-font neon-yellow">JAVASCRIPT BASICS</h3>
+                            <p class="text-yellow-400 text-sm space-font">HackerRank</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Core JavaScript programming fundamentals and algorithmic problem-solving expertise.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-yellow-400 space-font text-sm">2024</span>
+                        <a href="https://www.hackerrank.com/certificates/f8748281f9d3" class="cosmic-btn px-4 py-2 rounded-lg text-sm transition-all transform hover:scale-110 magnetic group-hover:neon-yellow">
+                            <i class="fas fa-certificate mr-2"></i>View
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Data Science Fundamentals -->
+                <div class="certification-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500 reveal-scale stagger-4 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mr-4 pulse-cosmic">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white space-font neon-purple">DATA SCIENCE FUNDAMENTALS</h3>
+                            <p class="text-purple-400 text-sm space-font">Great Learning</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Essential data science concepts, analytics, and machine learning foundations.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-purple-400 space-font text-sm">2023</span>
+                        <a href="#" class="cosmic-btn px-4 py-2 rounded-lg text-sm transition-all transform hover:scale-110 magnetic group-hover:neon-purple">
+                            <i class="fas fa-certificate mr-2"></i>View
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Talented Coder Certificate -->
+                <div class="certification-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500 reveal-scale stagger-5 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center mr-4 pulse-cosmic">
+                            <i class="fas fa-award text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white space-font neon-pink">TALENTED CODER</h3>
+                            <p class="text-pink-400 text-sm space-font">MSME</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Recognition for exceptional coding abilities and innovative problem-solving skills.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-pink-400 space-font text-sm">2024</span>
+                        <a href="#" class="cosmic-btn px-4 py-2 rounded-lg text-sm transition-all transform hover:scale-110 magnetic group-hover:neon-pink">
+                            <i class="fas fa-certificate mr-2"></i>View
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Future Learning Placeholder -->
+                <div class="certification-card space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500 reveal-scale stagger-6 group border-2 border-dashed border-cyan-500 border-opacity-30">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mr-4 pulse-cosmic">
+                            <i class="fas fa-plus text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white space-font neon-cyan">NEXT CERTIFICATION</h3>
+                            <p class="text-cyan-400 text-sm space-font">Coming Soon</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Continuous learning journey continues - next cosmic achievement loading...</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-cyan-400 space-font text-sm">2024+</span>
+                        <div class="cosmic-btn px-4 py-2 rounded-lg text-sm opacity-50 cursor-not-allowed">
+                            <i class="fas fa-hourglass-half mr-2"></i>Soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certification Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500">
+                    <div class="text-3xl font-bold neon-cyan space-font pulse-cosmic counter" data-target="5">20+</div>
+                    <div class="text-gray-300 mt-2">Certifications</div>
+                </div>
+                <div class="space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500">
+                    <div class="text-3xl font-bold neon-green space-font pulse-cosmic counter" data-target="4">7+</div>
+                    <div class="text-gray-300 mt-2">Platforms</div>
+                </div>
+                <div class="space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500">
+                    <div class="text-3xl font-bold neon-purple space-font pulse-cosmic counter" data-target="2024">2025</div>
+                    <div class="text-gray-300 mt-2">Latest Year</div>
+                </div>
+                <div class="space-card p-6 rounded-2xl hover:cosmic-glow transition-all duration-500">
+                    <div class="text-3xl font-bold neon-pink space-font pulse-cosmic">∞</div>
+                    <div class="text-gray-300 mt-2">Learning</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Certification Icons -->
+        <div class="absolute top-20 left-10 text-4xl opacity-20 float-cosmic">🏅</div>
+        <div class="absolute top-40 right-20 text-4xl opacity-20 float-cosmic" style="animation-delay: 1s;">📜</div>
+        <div class="absolute bottom-40 left-20 text-4xl opacity-20 float-cosmic" style="animation-delay: 2s;">🎓</div>
+        <div class="absolute bottom-20 right-10 text-4xl opacity-20 float-cosmic" style="animation-delay: 0.5s;">⭐</div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 deep-space-bg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 space-font neon-blue">ESTABLISH CONTACT</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    🛸 Ready to embark on a cosmic coding journey? Let's connect across the digital universe and create something extraordinary!
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-card p-6 flex items-center space-x-4 reveal-fade-left stagger-1 hover:cosmic-glow transition-all duration-500">
+                        <div class="w-12 h-12 space-card rounded-full flex items-center justify-center">
+                            <i class="fas fa-envelope neon-cyan"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold space-font">TRANSMISSION</h3>
+                            <p class="text-gray-300">anasxaerospace@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-card p-6 flex items-center space-x-4 reveal-fade-left stagger-2 hover:cosmic-glow transition-all duration-500">
+                        <div class="w-12 h-12 space-card rounded-full flex items-center justify-center">
+                            <i class="fas fa-satellite neon-purple"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold space-font">FREQUENCY</h3>
+                            <p class="text-gray-300">+91-7860215229</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-card p-6 flex items-center space-x-4 reveal-fade-left stagger-3 hover:cosmic-glow transition-all duration-500">
+                        <div class="w-12 h-12 space-card rounded-full flex items-center justify-center">
+                            <i class="fas fa-globe-americas neon-pink"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold space-font">COORDINATES</h3>
+                            <p class="text-gray-300">Kanpur, India - Earth</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-card p-8 reveal-fade-right stagger-1">
+                    <form class="space-y-6" id="contactForm">
+    <div>
+        <input type="text" name="from_name" placeholder="Your Name" ... >
+    </div>
+    <div>
+        <input type="email" name="from_email" placeholder="Your Email" ... >
+    </div>
+    <div>
+        <textarea rows="5" name="message" placeholder="Your Message" ... ></textarea>
+    </div>
+    <button type="submit" ... >SEND TRANSMISSION</button>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-purple-500 border-opacity-30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="text-3xl font-bold mb-4 space-font neon-cyan">ANAS KHAN</div>
+                <p class="text-gray-400 mb-6">🚀 Full-Stack Developer | MERN Stack Specialist | Digital Space Explorer</p>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://github.com/Anaskhan78602" class="text-2xl hover:neon-purple transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anas-khan-751351244/" class="text-2xl hover:neon-blue transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/anasxaerospace/" class="text-2xl hover:neon-cyan transition-colors">
+                        <i class="fas fa-code"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-400">© 2024 Anas Khan. All rights reserved across the digital universe.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="scrollToTop" class="cosmic-btn p-4 rounded-full shadow-lg transition-all transform hover:scale-110 opacity-0 invisible">
+            <i class="fas fa-rocket"></i>
+        </button>
+    </div>
+
+
+    <script src="space.js"></script>
+</body>
+</html>
