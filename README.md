@@ -3,7 +3,7 @@
 
 ## 🌐 Live Demo
 
-Check out the live portfolio: [Your Live Link](https://anaskhan78602.github.io/PORTFOLIO-SPACE-EDITION/) *(replace `#` with your GitHub Pages link)*
+Check out the live portfolio: [Your Live Link](https://anaskhan78602.github.io/PORTFOLIO-SPACE-EDITION/) 
 
 ---
 
@@ -16,4 +16,5 @@ Check out the live portfolio: [Your Live Link](https://anaskhan78602.github.io/P
 ---
 
 Made with ❤️ and 🌌
+
 
